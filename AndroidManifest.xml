@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  
+Programmer: Craig Wiencek
+Class ID: cwienc9061
+Lab #1: Android for World Domination
+CIS 2610: Business Mobile Programming
+Spring 2017
+Due date: 2/02/17
+Date completed: 2/01/17
+************************************** 
+Program Explanation: The android manifest can be thought of as the central location of the app.
+in the <manifenst> tag package is set to edu.wmich.lab1cwien9061 which is the name of my
+project/package. In the <application> tag we hold three activities, one for MainActivity, 
+ItemsActivity, and DataActivity. android:lable is directed to the strings.xml file to the
+<string> with the id app_name. The theme for the application is set to default @style/AppTheme.
+*************************************
+
+ -->
+  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.wmich.lab1cwienc9061">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ItemsActivity"></activity>
+        <activity android:name=".DataActivity"></activity>
+
+
+    </application>
+
+</manifest>

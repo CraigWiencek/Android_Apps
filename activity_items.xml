@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  
+Programmer: Craig Wiencek
+Class ID: cwienc9061
+Lab #1: Android for World Domination
+CIS 2610: Business Mobile Programming
+Spring 2017
+Due date: 02/02/17
+Date completed: 02/01/17
+************************************** 
+Program Explanation: This is the activty for ItemsActivity which contains an imageView
+and a Button to direct the user back to MainActivity. <RelativeLayout> tag indicates
+the layout of the actvity will be relative. The id of the layout is set to activity_items and
+background refers to colors.xml <color> with the id of backgroundColor.
+*************************************
+
+ -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_items"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/backgroundColor"
+    tools:context="edu.wmich.lab1cwienc9061.ItemsActivity">
+
+<!--The imageView contains an image named pipboyitems located in the drawables folder. The 
+id of the imageView is set to itemsScreen with a transparent background. The contentdescription
+of the imageView refers to the <string> in the strings.xml file with the name "pipBoyItems-->
+
+    <!--This button sends the user back to activity_main from activity_items. The Text contained in the
+    button refers to the string with the id "pipBoyHome" in strings.xml. The id of the button is set
+    is homeButton-->
+    <Button
+        android:text="@string/pipBoyHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:id="@+id/homeButton" />
+  <!--This textView offers a description of the imageView to help the user guess the game being referenced...
+  The <string> referenced in the textView is the
+  one with the id itemsDescript. The id of the textView is textViewItemsdescript and the color of the text is
+  changed by textColor referencing the <drawable> tag with the id textColorTrivia and the textSize is changed
+  by entering 24 scaled-independent pixels-->
+  <TextView
+        android:text="@string/itemsDescript"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewItemsDescript"
+        android:textSize="24sp"
+        android:textColor="@drawable/textColorTrivia"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pipboyitems"
+        android:id="@+id/itemsScreen"
+        android:contentDescription="@string/pipBoyItems"
+        android:background="@android:color/transparent"
+        android:layout_alignTop="@+id/textViewItemsDescript"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  
+Programmer: Craig Wiencek
+Class ID: cwienc9061
+Lab #1: Android for World Domination
+CIS 2610: Business Mobile Programming
+Spring 2017
+Due date: 02/02/17
+Date completed: 02/01/17
+************************************** 
+Program Explanation: This is our activity_main file that displays first when the
+application is opened. It contains an imageView as well as two buttons. The <RelativeLayout>
+tag specifies that the layout of the activity is Relative and android:id designates the 
+id for the layout, actvity_main. background refers to colors.xml <color> with the id of backgroundColor.
+*************************************
+
+ -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/backgroundColor"
+    tools:context="edu.wmich.lab1cwienc9061.MainActivity"
+    android:clickable="false">
+
+
+    <!--This button is the one that directs the user to DataActivity, the text
+    displayed in the button refers to the <string> with the id of pipBoyData. The id
+    i gave the button, dataButton. Content description refers to the <string> with the id
+    of pipBoyData.-->
+    <Button
+        android:text="@string/pipBoyData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dataButton"
+        android:contentDescription="@string/pipBoyData"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/itemButton" />
+    <!--This button is the one that directs the user to ItemsActivity, the text
+    displayed in the button refers to the <string> with the id pipBoyItems. The id
+    of the button is itemsButton-->
+    <Button
+        android:text="@string/pipBoyItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemButton"
+        android:contentDescription="@string/pipBoyItems"
+        android:layout_above="@+id/dataButton"
+        android:layout_centerHorizontal="true" />
+
+    <!--In our imageView tag app:srcCompact is set to @drawable/pipboyhome which specifies that
+ the image in the drawables folder with the name pipboyhome is displayed. The id for this
+ imageView is homeScreen and contentDescription refers to the <string> with the id pipBoyHome.
+ By setting background to @android:color/transparent, we allow the background color of the
+ activity to show rather than the images.-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pipboyhome"
+        android:id="@+id/homeScreen"
+        android:contentDescription="@string/pipBoyHome"
+        android:background="@android:color/transparent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+<!--I created a spinner to display potential games for the user to pick as their answer from in
+ dropdown display. The textAlignment of the text in the spinner is set to center, i edited the
+  layout_height to 46 density-independent pixels. The id of the spinner is spinnerGame.
+  android:entries property lets you specify the items that will be displayed in the spinner, mine
+  references <string-array> with the name/id arrayGames. The background color of the spinner is set
+  to the <drawable> with the name/id textColorTrivia.-->
+    <Spinner
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:id="@+id/spinnerGame"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="54dp"
+        android:entries="@array/arrayGames"
+        android:background="@drawable/textColorTrivia"/>
+
+<!--This text view asks the user "What game does this reference?" and refers to the <string> with the
+id of trivialQuestion. The id of this textView is textViewTrivia and the text has a size of 24
+scaled-independent pixels. The color of the text refers to the <drawable> with the id of textColorTrivia-->
+    <TextView
+        android:text="@string/trivialQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTrivia"
+        android:textSize="24sp"
+        android:textColor="@drawable/textColorTrivia"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+</RelativeLayout>
